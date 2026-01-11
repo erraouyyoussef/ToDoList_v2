@@ -122,3 +122,21 @@ body .container {
 .container ul li.checked {
     background-color: rgba(0, 128, 0, 0.592);
 }
+
+@media (max-width: 500px) {
+    body .container {
+        width: 80%;
+        margin-top: 40%;
+        padding: 10px;
+    }
+
+    .container #form {
+        width: 95%;
+    }
+
+    .container ul {
+        width: 85%;
+        font-size: 1em;
+    }
+
+}
