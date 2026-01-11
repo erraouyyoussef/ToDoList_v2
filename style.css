@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(images/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    font-family: system-ui, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+body .container {
+    width: 500px;
+    height: fit-content;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 20px;
+    padding: 20px 20px;
+    box-shadow: 0 0 15px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    text-shadow: 0 0 10px black;
+}
+
+.container #form {
+    /* background-color: red; */
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container #form input {
+    padding: 8px 8px;
+    width: 75%;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+}
+
+.container #form input:focus {
+    outline: solid 2px green;
+}
+
+.container #form button {
+    width: 25%;
+    outline: none;
+    border: none;
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+.container #form button:hover {
+    background-color: #036803;
+    transition: 0.5s;
+
+}
+
+.container ul {
+    margin-top: 20px;
+    /* background-color: red; */
+    list-style: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    width: 65%;
+
+}
+
+.container ul li {
+    margin-bottom: 10px;
+    background-color: rgba(236, 68, 68, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.container ul li span {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container ul li span:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.container ul li p:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+.container ul li:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.container ul li.checked {
+    background-color: rgba(0, 128, 0, 0.592);
+}
