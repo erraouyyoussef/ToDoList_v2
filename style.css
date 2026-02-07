@@ -1,40 +1,53 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: url(images/bg.jpg);
     background-size: cover;
-    height: 100vh;
-    font-family: system-ui, sans-serif;
-    color: white;
-    display: flex;
-    justify-content: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', sans-serif;
+    background-attachment: fixed;
+    background-position: right ;
+
 }
 
-body .container {
+body section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+section .container {
     width: 500px;
     height: fit-content;
     margin-top: 10%;
-    background-color: rgba(255, 255, 255, 0.199);
-    border-radius: 20px;
+    /* background-color: rgba(255, 255, 255, 0.199); */
+    background-image: linear-gradient(130deg, rgba(0, 0, 255, 0.15), rgba(255, 18, 129, 0.15));
+    border-radius: 15px;
     padding: 20px 20px;
-    box-shadow: 0 0 15px black;
+    box-shadow: 0 0 10px pink;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    border: solid 2px pink;
 }
+
 
 .container h1 {
     margin-bottom: 20px;
     text-transform: capitalize;
-    text-shadow: 0 0 10px black;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .container #form {
-    /* background-color: red; */
     width: 70%;
     display: flex;
     justify-content: space-between;
@@ -78,7 +91,6 @@ body .container {
 
 .container ul {
     margin-top: 20px;
-    /* background-color: red; */
     list-style: none;
     font-size: 20px;
     text-transform: capitalize;
@@ -88,19 +100,25 @@ body .container {
 
 .container ul li {
     margin-bottom: 10px;
-    background-color: rgba(236, 68, 68, 0.6);
+    background-color: rgba(255, 71, 71, 0.5);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding: 6px 8px;
     border-radius: 10px;
     transition: 0.5s;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    font-size: 18px;
 }
 
 .container ul li span {
     cursor: pointer;
     font-size: 16px;
+
 }
 
 .container ul li span:hover {
@@ -120,8 +138,20 @@ body .container {
 }
 
 .container ul li.checked {
-    background-color: rgba(0, 128, 0, 0.592);
+    background-color: rgba(0, 128, 0, 0.5);
 }
+
+
+footer {
+    background-color: rgba(128, 128, 128, 0.473);
+    text-align: center;
+    padding: 20px 0;
+    line-height: 40px;
+    color: white;
+    backdrop-filter: blur(10px);
+    margin-top: 50px;
+}
+
 
 @media (max-width: 500px) {
     body .container {

@@ -1,22 +1,27 @@
+//calling all tagNames i'll need
 let container = document.querySelector('.container');
 let inputFiled = document.getElementById('inputFiled');
-let btn = document.getElementById('btn');
 let ul = document.getElementById('ul');
+let form = document.getElementById('form');
 
 
+
+//it's helps to use add button and key 'Enter' to do the action
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    addTask();
+})
+
+
+//this function for creating a list and it's chilldern 'P' and 'SPAN'
 function addTask() {
     let task = inputFiled.value
     if (task.trim() === '') {
         alert('ADD YOUR TASK FIRST');
-    } else if (task.trim().length > 30) {
+    } else if (task.trim().length > 40) {
         alert('MAKE YOUR TASK A BIT BRIEF');
     } else {
         let li = document.createElement('li');
-        //     li.innerHTML = `<p>✔</p> ${inputFiled.value}
-        //  <span>⛔</span>`
-        //     ul.appendChild(li);
-        //     inputFiled.value = '';
-        //     
         let p = document.createElement('p');
         p.textContent = '✖'
 
@@ -29,17 +34,11 @@ function addTask() {
         saveData()
     }
 };
-btn.addEventListener('click', addTask)
-
-inputFiled.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-        addTask()
-    };
-
-});
 
 
+//here i target the ul tag for applying my functions to it's chilldern
 ul.addEventListener('click', function (e) {
+
     if (e.target.tagName === 'SPAN') {
         e.target.parentElement.remove()
         saveData()
@@ -51,18 +50,21 @@ ul.addEventListener('click', function (e) {
 
         if (li.classList.contains('checked')) {
             e.target.textContent = '✔';
+
         } else {
             e.target.textContent = '✖';
-        }
 
+
+        }
         saveData();
     }
-
 
 });
 
 
 
+
+//those functions for storing tasks and thier mood if cheaked or not
 function saveData() {
     localStorage.setItem('tasks', ul.innerHTML)
 }
