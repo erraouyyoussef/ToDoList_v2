@@ -72,3 +72,44 @@ function showData() {
     ul.innerHTML = localStorage.getItem('tasks')
 }
 showData()
+
+//add date and time
+function dateTime() {
+    const displayTime = document.getElementById('Time');
+    const displayDate = document.getElementById('Date');
+    const date = new Date();
+
+    hours = date.getHours()
+    minutes = date.getMinutes()
+    secondes = date.getSeconds()
+    displayTime.textContent = `${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(secondes).padStart(2, '0')}`;
+
+    day = date.getDate();
+    month = date.getMonth() + 1;
+    year = date.getFullYear()
+    displayDate.textContent = `${String(day).padStart(2, '0')} / ${String(month).padStart(2, '0')} / ${year}`
+
+}
+setInterval(dateTime, 1000);
+
+
+//change container background every 1s
+let i = 0;
+function bgChanges() {
+    ;
+    const color1 = 'linear-gradient(to top, rgba(0, 0, 255,0.15), rgba(255, 18, 129,0.15))'
+    const color2 = 'linear-gradient(to right, rgba(0, 0, 255,0.15), rgba(255, 18, 129,0.15))'
+    const color3 = 'linear-gradient(to bottom, rgba(0, 0, 255,0.15), rgba(255, 18, 129,0.15))'
+    const color4 = 'linear-gradient(to left, rgba(0, 0, 255,0.15), rgba(255, 18, 129,0.15))'
+    const colors = [color1, color2, color3, color4];
+
+    container.style.backgroundImage = colors[i];
+    i++
+    if (i === colors.length) {
+        i = 0;
+    }
+}
+
+
+setInterval(bgChanges, 800);
+
